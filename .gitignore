@@ -7,7 +7,12 @@ __pycache__/
 *.so
 
 # Dont upload the whole dataset to github
-task1/face/face-imgs/
+task1/pos
+task1/neg
+
+#No VSCode files
+.vscode
+
 
 # Distribution / packaging
 .Python
