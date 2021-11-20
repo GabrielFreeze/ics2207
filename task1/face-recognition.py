@@ -10,7 +10,7 @@ while cap.isOpened():
         frame = cv2.flip(frame, 1)                                                          #Flip the frame horizontally.
         frameSmall = cv2.resize(frame, (0,0), None, 1/scl, 1/scl)                           #Resize the frame by a factor of scl.
 
-        face_cascade = cv2.CascadeClassifier('cascade2/cascade.xml')                        #Load the cascade.
+        face_cascade = cv2.CascadeClassifier('cascade/cascade.xml')                         #Load the cascade.
         frameSmall = cv2.cvtColor(frameSmall, cv2.COLOR_BGR2GRAY)                           #Convert to grayscale.
         faces = face_cascade.detectMultiScale(frameSmall, scaleFactor=1.05, minNeighbors=3) #Detect faces.
         
