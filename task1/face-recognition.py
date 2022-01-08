@@ -1,7 +1,9 @@
 import cv2
+import os 
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 cap = cv2.VideoCapture(0)
-scl = 4
+scl = 1
 
 while cap.isOpened():
     ret, frame = cap.read()                                                                 # Get current frame.
@@ -12,8 +14,8 @@ while cap.isOpened():
         frameSmall = cv2.cvtColor(frameSmall, cv2.COLOR_BGR2GRAY)                           #Convert to grayscale.
         frameSmall = cv2.equalizeHist(frameSmall)                                           #Equalize the histogram.
 
-        try: face_cascade = cv2.CascadeClassifier('cascade/cascade.xml')                    #Load the cascade (Linux).
-        except: face_cascade = cv2.CascadeClassifier('cascade\\cascade.xml')                #Load the cascade (Windows).
+        try: face_cascade = cv2.CascadeClassifier(dir_path + '/cascade/cascade.xml')        #Load the cascade (Linux).
+        except: face_cascade = cv2.CascadeClassifier(dir_path + '\\cascade\\cascade.xml')   #Load the cascade (Windows).
         faces = face_cascade.detectMultiScale(frameSmall, scaleFactor=1.05, minNeighbors=3) #Detect faces.
         
         for (x, y, w, h) in [i*scl for i in faces]:                                         #Draw rectangle around the faces.
