@@ -5,8 +5,8 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 scl = 1
 
 
-for name in ["\\test1.jpg","\\test2.jpg","\\test3.jpg"]:    
-    
+for i in range(1,13):    
+    name = f'\\validation-set\\test ({i}).jpg'
     img = cv2.imread(dir_path + name)
     cv2.imshow(name, img)
     img = cv2.flip(img, 1)                                                          

@@ -3,7 +3,7 @@ import os
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 cap = cv2.VideoCapture(0)
-scl = 1
+scl = 4
 
 while cap.isOpened():
     ret, frame = cap.read()                                                                 # Get current frame.
