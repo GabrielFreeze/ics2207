@@ -17,8 +17,8 @@ task1/data/
 task1/pos.vec
 
 #Don't upload Word Documents
-.docx
-.doc
+*.docx
+*.doc
 
 
 # Distribution / packaging
